@@ -2,9 +2,36 @@ nav {
     text-transform: uppercase;
 }
 
+h3 a {
+    text-decoration: none;
+    color: black;
+}
+
+h3 a:hover {
+    text-decoration: none;
+    color: gray;
+}
+
 .navigacioni {
     font-weight: 600;
     font-size: 20;
+}
+
+.breadcrumb {
+    background-color: transparent !important;
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.breadcrumb a:hover {
+    text-decoration: none;
+    color: gray;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -35,7 +62,7 @@ footer a.social {
 }
 
 header {
-    padding: 30px 0;
+    padding: 0;
 }
 
 header a.social {
@@ -115,6 +142,8 @@ a.social:hover {
 
 .subheading {
     color: gray;
+    font-weight: bold;
+    margin: 0;
 }
 
 .content-text {
