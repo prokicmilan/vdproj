@@ -1,3 +1,7 @@
+body {
+    font-family: 'Oswald';
+}
+
 nav {
     text-transform: uppercase;
 }
@@ -148,6 +152,26 @@ a.social:hover {
 
 .content-text {
     text-align: justify;
+}
+
+.date-btn {
+	width: 54px; height: 65px;
+	padding: 10px 5px;
+ 	color: #fff;
+ 	font-size: 18px;
+ 	text-transform: uppercase;
+ 	z-index: 101; position: relative;
+ 	text-align: center;
+ 	overflow: hidden;
+ 	background-color: #000;
+}
+
+.date { 
+    display: inline-table;
+	padding: 5px 10px;
+	color: #fff; font-size: 18px;
+	text-transform: uppercase;
+	background-color: #000;
 }
   
 @media (min-width: 768px) {
