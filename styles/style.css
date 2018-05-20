@@ -1,6 +1,19 @@
 body {
+    height: 100%;
     font-family: 'Oswald';
 }
+
+.wrapper {
+    min-height: 100%;
+  
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -273px;
+  }
+
+.push {
+    height: 50px;
+  }
 
 nav {
     text-transform: uppercase;
