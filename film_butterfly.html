@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>
+            FEST Crni leptir
+</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="lightbox/css/lightbox.css"/>
+<script src="lightbox/js/lightbox-plus-jquery.js"></script>
+
+<script>
+function proveraPodataka(){
+	var ime=document.mojaForma.ime;
+	var prezime=document.mojaForma.prezime;
+	var mail=document.mojaForma.mail;
+	var brojT=document.mojaForma.mail;
+	
+	if((ime=="")||(prezime=="")||(brojT=="")||(mail=="")){
+		alert("Potrebno je uneti sve podatke.");
+	}
+	else{
+		alert("Uspeh.");
+	}
+
+}
+
+function dodajOmiljene(){
+	localStorage.setItem();
+}
+
+</script>
+
+</head>
+<body>
+<div id="header"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">fest 2018</a></li>
+			<li class="breadcrumb-item">
+				<a href="filmovi.html">filmovi</a>
+			</li>
+		</ol>
+	</div>
+	</div>
+	
+	<div class="row" style="margin-top:10px;">
+	<!-- Sadrzaj filma -->
+	<img src="images/crni_leptir_poster.jpg" class="col-lg-5 col-md-5 col-sm-12"></img>
+	<table class="col-lg-7 col-md-7 col-sm-12">
+	<tr>
+		<td>
+		<h2><strong>Crni leptir</strong></h2></td>
+		<td align="right"><button type="button" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<p>Na obodu planinskog gradi&cacute;a, u kome se doga&dstrok;a niz otmica i ubistava, povu&ccaron;eni pisac Pol poku&scaron;ava 
+		da zapo&ccaron;ne pisanje scenarija za koji se nada da &cacute;e mu spasiti karijeru. Posle napetog susreta na jednoj ve&ccaron;eri sa 
+		skitnicom D&zcaron;ekom, Pol mu nudi sme&scaron;taj. Ubrzo dovitljivi, zahtevni D&zcaron;ek na&dstrok;e na&ccaron;in da se na silu uklju&ccaron;i u Polov 
+		rad i njih dvojica po&ccaron;inju igru superiornosti koja &cacute;e najzad dovesti jednu pri&ccaron;u do kraja. Brajan Gudmen (1963) 
+		ameri&ccaron;ki je glumac i reditelj, poznat po filmovima The Fast and the Furious: Tokyo Drift (2006), Minhen (2005) i 
+		Uhvati me ako mo&zcaron;e&scaron;.</p>
+		</td>
+		<tr>
+		<td colspan="2">
+			<table cellpadding="10px" align="center">
+			<tr>
+			<td><strong>Originalni naslov:</strong></td>
+			<td>Black butterfly</td>
+			</tr>
+			<tr>
+			<td><strong>Dr&zcaron;ava:</strong></td>
+			<td>Amerika</td>
+			</tr>
+			<tr>
+			<td><strong>Godina:</strong></td>
+			<td>2017</td>
+			</tr>
+			<tr>
+			<td><strong>Du&zcaron;ina trajanja filma:</strong></td>
+			<td>93 min</td>
+			</tr>
+			<tr>
+			<td><strong>Re&zcaron;iser:</strong></td>
+			<td>Brian Goodman</td>
+			</tr>
+			<tr>
+			<td><strong>Glumci:</strong></td>
+			<td>Antonio Banderas, Jonathan Rhys Meyers, Piper Perabo</td>
+			</tr>
+			<tr>
+			<td><strong>&Zcaron;anr:</strong></td>
+			<td>triler</td>
+			</tr>
+			<tr>
+			<td><strong>Distributer:</strong></td>
+			<td>DEXIN FILM</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+	</tr>
+	</table>
+	</div>
+	
+	<div class="row" style="margin-top:20px; margin-bottom:20px; ">
+		<div class="embed-responsive embed-responsive-16by9" style="max-width:720px; max-height:480px; ">
+		 <iframe class="embed-responsive-item" style="max-width:720px; max-height:480px; "
+			src="https://www.youtube.com/embed/MFOaolQR6jk"> Browser ne podrzava klip.
+		</iframe> 
+		</div>
+	</div>
+	<div class="row">
+	<!-- rezervacije za film-ime, prezime, broj t, mail, izbor projekcije; i mail to -->
+		<button data-toggle="collapse" type="button" data-target="#rezForma" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">
+		Rezervi&scaron;ite Va&scaron; kartu
+		</button>
+		<div class="collapse col-md-12" id="rezForma">
+		<form name="mojaForma">
+			<table class="table" style="margin-bottom:20px; margin-top:20px;">
+			  <thead class="thead-dark">
+				<tr>
+				  <th scope="col" colspan="2" align="center">Unesite podatke neophodne za rezervaciju:</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <th scope="row">Ime:</th>
+				  <td><input class="form-control" type="text" value="" name="ime"></input></td>
+				</tr>
+				<tr>
+				  <th scope="row">Prezime:</th>
+				  <td><input class="form-control" type="text" value="" name="prezime"></input></td>
+				</tr>
+				<tr>
+				  <th scope="row">Broj telefona:</th>
+				  <td><input class="form-control" type="text" value="" name="brojT"></input></td>
+				</tr>
+				<tr>
+				  <th scope="row">E-mail adresa:</th>
+				  <td><input class="form-control" type="email" value="" name="mail"></input></td>
+				</tr>
+				<tr>
+				  <th scope="row">Projekcija:</th>
+				  <td>
+					<select name="projekcija" class="form-control">
+					  <option value="prvi">22.II 18:00h</option>
+					  <option value="drugi">27.II 19:45h</option>
+					  <option value="treci">1.III 14:00h</option>
+					  <option value="cetvrti">1.III 21:00h</option>
+					</select>
+				  </td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="btn btn-success" onclick="proveraPodataka()"type="button">Po&scaron;alji rezervaciju</button></td>
+				</tr>
+			  </tbody>
+			</table>
+		</form>
+		
+		</div>
+	</div>
+	<div class="row" style="margin-top:10px">
+		<h4 class="col-sm-12">
+			<strong>Galerija</strong>
+			<h4 class="single_line">&nbsp;</h4>
+		</h4>
+	</div>
+	<div class="row">
+	<div class="wrap-gallery-sidebar flex-w">
+		<!--slike iz filma -->
+		<a class="item-gallery-sidebar wrap-pic-w" href="images/crni_leptir.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-3 col-md-5 col-sm-12"  src="images/crni_leptir.jpg" style="margin-top:10px" alt="Gallery"></img>
+		</a>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir1.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-4 col-md-6 col-sm-12" src="images/crni_leptir1.jpg" style="margin-top:10px" alt="Gallery"></img>
+		</a>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir2.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-4 col-md-5 col-sm-12" src="images/crni_leptir2.jpg" style="margin-top:10px" alt="Gallery"></img>
+		</a>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir3.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-5 col-md-6 col-sm-12" src="images/crni_leptir3.jpg" style="margin-top:10px" alt="Gallery"></img>
+		</a>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir4.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-5 col-md-6 col-sm-12" src="images/crni_leptir4.jpg" style="margin-top:10px" alt="Gallery"></img>
+		</a>
+
+	</div>
+	</div>
+</div>
+<div id="footer" style="margin-top:20px;"></div>
+<script src="js/lightbox-plus-jquery.js"></script>
+</body>
+<script>
+$(function() {
+	$("#header").load("newheader.html");
+	$("#footer").load("footer.html");
+});
+</script>
+</html>

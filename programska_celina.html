@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>
+            FEST Programska celina
+</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+	<div id="header"></div>
+	<div class="row">
+		<nav aria-label="breadcrumb" style="width:100%;">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">fest 2018</a></li>
+		</ol>
+		</nav>
+	</div>
+	<div class="row">
+		<h1 class="col-sm-12 title">
+			Programska celina
+		</h1>
+	</div>
+	<!-- glavni takmicarski program, srpski film i superheroji-->
+	<div class="row" style="margin-top:50px;">
+		<img src="images/logo.jpg" class="col-lg-5 col-md-5 col-sm-12" style="max-height:200px; max-width:300px;"></img>
+		<table  class="col-lg-7 col-md-7 col-sm-12 text-right"  cellpadding="20px">
+			<tr>
+			<td>
+			<h2>Glavni takmi&ccaron;arski program</h2></td>
+			</td>
+			</tr>
+			<tr>
+			<td style="margin-top:50px;">
+			<a href="glavni_program.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Ceo program</button></a>
+			</td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="row" style="margin-top:100px;">
+	<img src="images/logo.jpg" class="col-lg-5 col-md-5 col-sm-12" style="max-height:200px; max-width:300px;"></img>
+		<table class="col-lg-7 col-md-7 col-sm-12 text-right"  cellpadding="20px">
+			<tr>
+			<td>
+			<h2>Srpski film</h2></td>
+			</td>
+			</tr>
+			<tr>
+			<td >
+			<a href="srpski_film_program.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Ceo program</button></a>
+			</td>
+			</tr>
+		</table>
+		
+	</div>
+	<div class="row" style="margin-top:100px;">
+		<img src="images/logo.jpg" class="col-lg-5 col-md-5 col-sm-12 " style="max-height:200px; max-width:300px;"></img>
+		<table  cellpadding="20px" class="col-lg-7 col-md-7 col-sm-12 text-right">
+			<tr>
+			<td>
+			<h2>Superheroji</h2></td>
+			</td>
+			</tr>
+			<tr>
+			<td style="margin-top:50px;">
+			<a href="superheroji_program.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Ceo program</button></a>
+			</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+<div id="footer" style="margin-top:50px;"></div>
+</body>
+<script>
+$(function() {
+	$("#header").load("newheader.html");
+	$("#footer").load("footer.html");
+});
+</script>
+
+</html>
