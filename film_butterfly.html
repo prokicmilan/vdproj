@@ -10,24 +10,53 @@
 
 <script>
 function proveraPodataka(){
-	var ime=document.mojaForma.ime;
-	var prezime=document.mojaForma.prezime;
-	var mail=document.mojaForma.mail;
-	var brojT=document.mojaForma.mail;
+	var ime=document.getElementById("ime");
+	var prezime=document.getElementById("prezime");
+	var mail=document.getElementById("mail");
+	var brojT=document.getElementById("brojT");
 	
-	if((ime=="")||(prezime=="")||(brojT=="")||(mail=="")){
+	if((ime.value=="")||(prezime.value=="")||(brojT.value=="")||(mail.value=="")){
 		alert("Potrebno je uneti sve podatke.");
 	}
 	else{
-		alert("Uspeh.");
+	//dodati proveru broja Telfeona
+		var numButtefly=localStorage.getItem("numButteflyRes");
+		if(numButtefly==null){
+			numButtefly=0;
+		}
+		numButtefly++;
+		localStorage.setItem("numButteflyRes",numButtefly);
+		window.location.href = "mailto:fest@hotmail.com";
 	}
 
 }
 
 function dodajOmiljene(){
-	localStorage.setItem();
+	var numUnique=localStorage.getItem("numFavFilms");
+	if(numUnique==null){
+		numUnique=0;
+	}
+	if(numUnique!=0){
+		//for petlja koja proverava da li je film vec dodat, ako se nalazi vec => return
+	}
+	
+	localStorage.setItem("imeFilma"+numUnique,"Crni leptir");
+	localStorage.setItem("linkFilma"+numUnique,"film_butterfly.html");
+	numUnique++;
+	localStorage.setItem("numFavFilms",numUnique);
 }
 
+function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(44.808587, 20.432469),
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    }
+	var posMarker = {lat: 44.808587, lng: 20.432469};
+	var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+	var marker = new google.maps.Marker({position: posMarker, map: map});
+
+} 
 </script>
 
 </head>
@@ -107,11 +136,19 @@ function dodajOmiljene(){
 	</div>
 	
 	<div class="row" style="margin-top:20px; margin-bottom:20px; ">
-		<div class="embed-responsive embed-responsive-16by9" style="max-width:720px; max-height:480px; ">
+		<div class="embed-responsive embed-responsive-16by9" style="max-width:720px; max-height:480px;">
 		 <iframe class="embed-responsive-item" style="max-width:720px; max-height:480px; "
 			src="https://www.youtube.com/embed/MFOaolQR6jk"> Browser ne podrzava klip.
 		</iframe> 
 		</div>
+	</div>
+	<div class="row">
+			<h4 class="col-lg-12">
+			Mesto projekcije: &nbsp;<strong>Sava Centar</strong>
+		</h4>
+	</div>
+	<div class="row" id="mapa" style="align:cener; width:100%;height:75%">
+	
 	</div>
 	<div class="row">
 	<!-- rezervacije za film-ime, prezime, broj t, mail, izbor projekcije; i mail to -->
@@ -120,7 +157,7 @@ function dodajOmiljene(){
 		</button>
 		<div class="collapse col-md-12" id="rezForma">
 		<form name="mojaForma">
-			<table class="table" style="margin-bottom:20px; margin-top:20px;">
+			<table class="table" style="margin-bottom:20px; margin-top:20px;" >
 			  <thead class="thead-dark">
 				<tr>
 				  <th scope="col" colspan="2" align="center">Unesite podatke neophodne za rezervaciju:</th>
@@ -129,19 +166,19 @@ function dodajOmiljene(){
 			  <tbody>
 				<tr>
 				  <th scope="row">Ime:</th>
-				  <td><input class="form-control" type="text" value="" name="ime"></input></td>
+				  <td><input class="form-control" type="text" value="" id="ime"></input></td>
 				</tr>
 				<tr>
 				  <th scope="row">Prezime:</th>
-				  <td><input class="form-control" type="text" value="" name="prezime"></input></td>
+				  <td><input class="form-control" type="text" value="" id="prezime"></input></td>
 				</tr>
 				<tr>
 				  <th scope="row">Broj telefona:</th>
-				  <td><input class="form-control" type="text" value="" name="brojT"></input></td>
+				  <td><input class="form-control" type="text" value="" id="brojT"></input></td>
 				</tr>
 				<tr>
 				  <th scope="row">E-mail adresa:</th>
-				  <td><input class="form-control" type="email" value="" name="mail"></input></td>
+				  <td><input class="form-control" type="email" value="" id="mail"></input></td>
 				</tr>
 				<tr>
 				  <th scope="row">Projekcija:</th>
@@ -155,7 +192,7 @@ function dodajOmiljene(){
 				  </td>
 				</tr>
 				<tr>
-					<td colspan="2"><button class="btn btn-success" onclick="proveraPodataka()"type="button">Po&scaron;alji rezervaciju</button></td>
+					<td colspan="2"><button class="btn btn-success" onclick="proveraPodataka()" type="button">Po&scaron;alji rezervaciju</button></td>
 				</tr>
 			  </tbody>
 			</table>
@@ -163,6 +200,7 @@ function dodajOmiljene(){
 		
 		</div>
 	</div>
+	
 	<div class="row" style="margin-top:10px">
 		<h4 class="col-sm-12">
 			<strong>Galerija</strong>
@@ -193,6 +231,7 @@ function dodajOmiljene(){
 </div>
 <div id="footer" style="margin-top:20px;"></div>
 <script src="js/lightbox-plus-jquery.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> 
 </body>
 <script>
 $(function() {

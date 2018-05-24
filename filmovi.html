@@ -23,13 +23,19 @@
 		<h1 class="col-sm-12 title">
 			pregled filmova
 		</h1>
+		<button type="button" class="btn btn-default" id="alphBnt">Pore&dstrok;aj po nazivu</button>
+		<button type="button" class="btn btn-default" id="dstnBnt">Pore&dstrok;aj po mestu projekcije</button>
+		<button type="button" class="btn btn-default" id="populBnt">Pore&dstrok;aj po popularnosti</button>
 	</div>
-	<div class="row" style="margin-top:10px;">
+	<div id="containerFilms">
+	<div class="row film" style="margin-top:10px;">
 	<!--prvi film-->
 		<img class="col-xs-12 col-sm-5 col-md-4 col-lg-3 img-responsive" src="images/crni_leptir_poster.jpg"  />
 		<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
 			<h2><strong>Crni leptir</strong></h2>
 			<h4 style="color:gray">Black Butterfly</h4>
+			<h6 hidden id="filmButterflyNum">0</h6>
+			<h3 hidden >Dom sindikata</h3>
 			<table cellpadding="6px">
 			<tr>
 				<td><strong>Dr&zcaron;ava:</strong></td>
@@ -54,12 +60,14 @@
 		</div>
 	</div>
 	
-	<div class="row" style="margin-top:60px;">
+	<div class="row film" style="margin-top:60px;">
 	<!--drugi film-->
 		<img class="col-xs-12 col-sm-5 col-md-4 col-lg-3 img-responsive" src="images/deadpool2.jpg"  />
 		<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
 			<h2><strong>Deadpool 2</strong></h2>
 			<h4 style="color:gray">Deadpool 2</h4>
+			<h6 hidden id="filmDeadpoolNum">0</h6>
+			<h3 hidden >Dom sindikata</h3>
 			<table cellpadding="6px">
 			<tr>
 				<td><strong>Dr&zcaron;ava:</strong></td>
@@ -83,12 +91,14 @@
 			</table>
 		</div>
 	</div>
-	<div class="row" style="margin-top:60px;">
+	<div class="row film" style="margin-top:60px;">
 	<!--jedan film-->
 		<img class="col-xs-12 col-sm-5 col-md-4 col-lg-3 img-responsive" src="images/quiet_place.jpg"  />
 		<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
 			<h2><strong>Tiho mesto</strong></h2>
 			<h4 style="color:gray">A Quiet Place</h4>
+			<h3 hidden >Sava centar</h3>
+			<h6 hidden id="filmQuietNum">0</h6>
 			<table cellpadding="6px">
 			<tr>
 				<td><strong>Dr&zcaron;ava:</strong></td>
@@ -112,6 +122,7 @@
 			</table>
 		</div>
 	</div>
+	</div>
 </div>
 <div id="footer" style="margin-top:20px;"></div>
 </body>
@@ -122,4 +133,43 @@ $(function() {
 });
 </script>
 
+
+<script>
+	var $divs = $("div.film");
+
+	$('#alphBnt').on('click', function () {
+		var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+			return $(a).find("h4").text() > $(b).find("h4").text();
+		});
+		$("#containerFilms").html(alphabeticallyOrderedDivs);
+	});
+
+	$('#dstnBnt').on('click', function () {
+		var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+			return $(a).find("h3").text() > $(b).find("h3").text();
+		});
+		$("#containerFilms").html(alphabeticallyOrderedDivs);
+	});
+	$('#populBnt').on('click', function () {
+		var numButtefly=localStorage.getItem("numButteflyRes");
+		if(numButtefly==null){
+			numButtefly=0;
+		}
+		var numDeadpool=localStorage.getItem("numDeadpoolRes");
+		if(numDeadpool==null){
+			numDeadpool=0;
+		}
+		var numQuiet=localStorage.getItem("numQuietRes");
+		if(numQuiet==null){
+			numQuiet=0;
+		}
+		document.getElementById("filmQuietNum").innerHTML=numQuiet;
+		document.getElementById("filmDeadpoolNum").innerHTML=numDeadpool;
+		document.getElementById("filmButterflyNum").innerHTML=numButterfly;
+		var numericallyOrderedDivs = $divs.sort(function (a, b) {
+			return $(a).find("h6").text() > $(b).find("h6").text();
+		});
+		$("#containerFilms").html(numericallyOrderedDivs);
+	});
+</script>
 </html>
