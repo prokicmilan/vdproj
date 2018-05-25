@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>
+            FEST Omiljeni
+</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+</head>
+<script>
+    function ucitajOmiljene() {
+        var mainContainer = document.getElementById("containerFilms");
+        var text = "";
+        var numFavorites = localStorage.getItem("numFavFilms");
+        for (var i = 0; i < numFavorites; i++) {
+            var filmName = localStorage.getItem("imeFilma" + i);
+            var filmLink = localStorage.getItem("linkFilma" + i);
+            var filmPicture = localStorage.getItem("slikaFilma" + i);
+            var newDiv = document.createElement("div");
+            newDiv.style.marginTop = "10px";
+            newDiv.classList = "row";
+            var movieContainer = document.createElement("div");
+            movieContainer.classList = "col-xs-12 col-sm-7 col-md-8 col-lg-9";
+            movieContainer.innerHTML = '<a href="'+filmLink+'" class="favLink">'+filmName+'</a>';
+            var image = document.createElement("img");
+            image.classList = "col-xs-12 col-sm-5 col-md-4 col-lg-3 img-fluid";
+            image.setAttribute('src', 'images/' + filmPicture);
+            newDiv.appendChild(image);
+            newDiv.appendChild(movieContainer);
+            mainContainer.appendChild(newDiv);
+        }
+    }
+</script>
+<body onload="ucitajOmiljene()">
+<div class="container">
+	<div id="header"></div>
+	<div class="row">
+		<div class="col-sm-12">
+			<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">fest 2018</a></li>
+			</ol>
+		</div>
+	</div>
+	<div class="row">
+		<h1 class="col-sm-12 title">
+			omiljeni filmovi
+		</h1>
+	</div>
+	<div id="containerFilms">
+	
+    </div>
+</div>
+<div id="footer" style="margin-top:20px;"></div>
+</body>
+<script>
+$(function() {
+	$("#header").load("newheader.html");
+	$("#footer").load("footer.html");
+});
+</script>
+
+
+</html>

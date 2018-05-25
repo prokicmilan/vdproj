@@ -93,11 +93,23 @@
 		var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
 		var marker = new google.maps.Marker({position: posMarker, map: map});
 
-} 
+    }
+    function checkFav() {
+		var numFavFilms = localStorage.getItem("numFavFilms");
+		for (var i = 0; i < numFavFilms; i++) {
+			var filmName = localStorage.getItem("imeFilma" + i);
+			if (filmName == "Deadpool 2") {
+				var btnFav = document.getElementById("btnFav");
+				btnFav.classList = "btn btn-success";
+				btnFav.disabled = true;
+				return;
+			}
+		}
+	}	  
 </script>
 
 </head>
-<body>
+<body onload="checkFav()">
 
 <div class="container">
     <div id="header"></div>
@@ -119,7 +131,7 @@
 	<tr>
 		<td>
 		<h2><strong>Deadpool 2</strong></h2></td>
-		<td align="right"><button type="button" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
+		<td align="right"><button type="button" id="btnFav" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
 		</td>
 	</tr>
 	<tr>

@@ -95,11 +95,21 @@
 		var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
 		var marker = new google.maps.Marker({position: posMarker, map: map});
 
-} 
+	}
+	function checkFav() {
+		var numFavFilms = localStorage.getItem("numFavFilms");
+		for (var i = 0; i < numFavFilms; i++) {
+			var filmName = localStorage.getItem("imeFilma" + i);
+			if (filmName == "Tiho mesto") {
+				document.getElementById("btnFav").classList = "btn btn-success";
+				return;
+			}
+		}
+	}	  
 </script>
 
 </head>
-<body>
+<body onload="checkFav()">
 <div class="container">
 	<div id="header"></div>
 	<div class="row">
@@ -120,7 +130,7 @@
 	<tr>
 		<td>
 		<h2><strong>Tiho mesto</strong></h2></td>
-		<td align="right"><button type="button" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
+		<td align="right"><button type="button" onclick="dodajOmiljene()" id="btnFav" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
 		</td>
 	</tr>
 	<tr>

@@ -72,6 +72,7 @@
 			for (var i = 0; i < numUnique; i++) {
                 var imeFilma = localStorage.getItem("imeFilma" + i);
                 if (imeFilma == "Crni leptir") {
+					alert("ne valja");
                     return;
                 }
             }
@@ -83,6 +84,9 @@
 		localStorage.setItem("slikaFilma" + numUnique, "crni_leptir_poster.jpg");		
 		numUnique++;
 		localStorage.setItem("numFavFilms",numUnique);
+		var btnFav = document.getElementById("btnFav");
+		btnFav.classList = "btn btn-success";
+		btnFav.disabled = true;
 	}
 
 	function myMap() {
@@ -95,11 +99,24 @@
 		var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
 		var marker = new google.maps.Marker({position: posMarker, map: map});
 
-} 
+	}
+
+	function checkFav() {
+		var numFavFilms = localStorage.getItem("numFavFilms");
+		for (var i = 0; i < numFavFilms; i++) {
+			var filmName = localStorage.getItem("imeFilma" + i);
+			if (filmName == "Crni leptir") {
+				var btnFav = document.getElementById("btnFav");
+				btnFav.classList = "btn btn-success";
+				btnFav.disabled = true;
+				return;
+			}
+		}
+	}	 
 </script>
 
 </head>
-<body>
+<body onload="checkFav()">
 <div id="header"></div>
 <div class="container">
 	<div class="row">
@@ -120,7 +137,7 @@
 	<tr>
 		<td>
 		<h2><strong>Crni leptir</strong></h2></td>
-		<td align="right"><button type="button" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
+		<td align="right"><button type="button" id="btnFav" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
 		</td>
 	</tr>
 	<tr>
