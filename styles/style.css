@@ -186,6 +186,14 @@ a.social:hover {
 	text-transform: uppercase;
 	background-color: #000;
 }
+
+.sortBtn {
+    text-transform: uppercase;
+}
+
+.sortBtn:hover {
+    background-color: gray;
+}
   
 @media (min-width: 768px) {
  .navbar-nav.navbar-center {

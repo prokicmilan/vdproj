@@ -23,9 +23,19 @@
 		<h1 class="col-sm-12 title">
 			pregled filmova
 		</h1>
-		<button type="button" class="btn btn-default" id="alphBnt">Pore&dstrok;aj po nazivu</button>
-		<button type="button" class="btn btn-default" id="dstnBnt">Pore&dstrok;aj po mestu projekcije</button>
-		<button type="button" class="btn btn-default" id="populBnt">Pore&dstrok;aj po popularnosti</button>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-4" style="margin-top: 5px;">
+					<button type="button" class="btn btn-default sortBtn" id="alphBnt">Pore&dstrok;aj po nazivu</button>
+				</div>
+				<div class="col-md-4" style="margin-top: 5px;">
+					<button type="button" class="btn btn-default sortBtn" id="dstnBnt">Pore&dstrok;aj po mestu projekcije</button>
+				</div>
+				<div class="col-md-4" style="margin-top: 5px;">
+					<button type="button" class="btn btn-default sortBtn" id="populBnt">Pore&dstrok;aj po popularnosti</button>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="containerFilms">
 	<div class="row film" style="margin-top:10px;">
@@ -35,7 +45,7 @@
 			<h2><strong>Crni leptir</strong></h2>
 			<h4 style="color:gray">Black Butterfly</h4>
 			<h6 hidden id="filmButterflyNum">0</h6>
-			<h3 hidden >Dom sindikata</h3>
+			<h3 hidden >Sava centar</h3>
 			<table cellpadding="6px">
 			<tr>
 				<td><strong>Dr&zcaron;ava:</strong></td>
@@ -86,7 +96,7 @@
 			<td> 	Ryan Reynolds, Josh Brolin</td>
 			</tr>
 			<tr>
-				<td ><a href="film_butterfly.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Op&scaron;irnije</button></a></td>
+				<td ><a href="film_deadpool.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Op&scaron;irnije</button></a></td>
 			</tr>
 			</table>
 		</div>
@@ -117,7 +127,7 @@
 			<td> 	John Krasinski, Emily Blunt</td>
 			</tr>
 			<tr>
-				<td ><a href="film_butterfly.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Op&scaron;irnije</button></a></td>
+				<td ><a href="film_quiet.html"><button type="button" class="btn btn-default btn-lg" style="background-color: black !important; color:white;">Op&scaron;irnije</button></a></td>
 			</tr>
 			</table>
 		</div>
@@ -151,7 +161,7 @@ $(function() {
 		$("#containerFilms").html(alphabeticallyOrderedDivs);
 	});
 	$('#populBnt').on('click', function () {
-		var numButtefly=localStorage.getItem("numButteflyRes");
+		var numButtefly=localStorage.getItem("numButterflyRes");
 		if(numButtefly==null){
 			numButtefly=0;
 		}
@@ -165,7 +175,7 @@ $(function() {
 		}
 		document.getElementById("filmQuietNum").innerHTML=numQuiet;
 		document.getElementById("filmDeadpoolNum").innerHTML=numDeadpool;
-		document.getElementById("filmButterflyNum").innerHTML=numButterfly;
+		document.getElementById("filmButterflyNum").innerHTML=numButtefly;
 		var numericallyOrderedDivs = $divs.sort(function (a, b) {
 			return $(a).find("h6").text() > $(b).find("h6").text();
 		});

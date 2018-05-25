@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-            FEST Crni leptir
+            FEST Deadpool 2
 </title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -52,12 +52,12 @@
 				mail.style.border = "solid red";
 				return;
 			}
-			var numButterfly=localStorage.getItem("numButterflyRes");
-			if(numButterfly==null){
-				numButterfly=0;
+			var numDeadpool=localStorage.getItem("numDeadpoolRes");
+			if(numDeadpool==null){
+				numDeadpool=0;
 			}
-			numButterfly++;
-			localStorage.setItem("numButterflyRes",numButterfly);
+			numDeadpool++;
+			localStorage.setItem("numDeadpoolRes",numDeadpool);
 			window.location.href = "mailto:fest@hotmail.com";
 		}
 	}
@@ -68,30 +68,28 @@
 			numUnique=0;
 		}
 		if(numUnique!=0){
-			if(numUnique!=0){
 			for (var i = 0; i < numUnique; i++) {
                 var imeFilma = localStorage.getItem("imeFilma" + i);
-                if (imeFilma == "Crni leptir") {
+                if (imeFilma == "Deadpool 2") {
                     return;
                 }
             }
 		}
-		}
 		
-		localStorage.setItem("imeFilma"+numUnique,"Crni leptir");
-		localStorage.setItem("linkFilma"+numUnique,"film_butterfly.html");
-		localStorage.setItem("slikaFilma" + numUnique, "crni_leptir_poster.jpg");		
+		localStorage.setItem("imeFilma"+numUnique,"Deadpool 2");
+		localStorage.setItem("linkFilma"+numUnique,"film_deadpool.html");
+		localStorage.setItem("slikaFilma" + numUnique, "deadpool2.jpg");        
 		numUnique++;
 		localStorage.setItem("numFavFilms",numUnique);
 	}
 
 	function myMap() {
 		var mapOptions = {
-			center: new google.maps.LatLng(44.808587, 20.432469),
+			center: new google.maps.LatLng(44.813124,20.4607433),
 			zoom: 14,
 			mapTypeId: google.maps.MapTypeId.TERRAIN
 		}
-		var posMarker = {lat: 44.808587, lng: 20.432469};
+		var posMarker = {lat: 44.81317, lng: 20.462825};
 		var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
 		var marker = new google.maps.Marker({position: posMarker, map: map});
 
@@ -100,8 +98,9 @@
 
 </head>
 <body>
-<div id="header"></div>
+
 <div class="container">
+    <div id="header"></div>
 	<div class="row">
 		<div class="col-sm-12">
 		<ol class="breadcrumb">
@@ -115,29 +114,26 @@
 	
 	<div class="row" style="margin-top:10px;">
 	<!-- Sadrzaj filma -->
-	<img src="images/crni_leptir_poster.jpg" class="col-lg-5 col-md-5 col-sm-12"></img>
+	<img src="images/deadpool2.jpg" class="col-lg-5 col-md-5 col-sm-12"></img>
 	<table class="col-lg-7 col-md-7 col-sm-12">
 	<tr>
 		<td>
-		<h2><strong>Crni leptir</strong></h2></td>
+		<h2><strong>Deadpool 2</strong></h2></td>
 		<td align="right"><button type="button" onclick="dodajOmiljene()" class="btn btn-default">Dodaj u omiljene &hearts;	</button>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2">
-		<p>Na obodu planinskog gradi&cacute;a, u kome se doga&dstrok;a niz otmica i ubistava, povu&ccaron;eni pisac Pol poku&scaron;ava 
-		da zapo&ccaron;ne pisanje scenarija za koji se nada da &cacute;e mu spasiti karijeru. Posle napetog susreta na jednoj ve&ccaron;eri sa 
-		skitnicom D&zcaron;ekom, Pol mu nudi sme&scaron;taj. Ubrzo dovitljivi, zahtevni D&zcaron;ek na&dstrok;e na&ccaron;in da se na silu uklju&ccaron;i u Polov 
-		rad i njih dvojica po&ccaron;inju igru superiornosti koja &cacute;e najzad dovesti jednu pri&ccaron;u do kraja. Brajan Gudmen (1963) 
-		ameri&ccaron;ki je glumac i reditelj, poznat po filmovima The Fast and the Furious: Tokyo Drift (2006), Minhen (2005) i 
-		Uhvati me ako mo&zcaron;e&scaron;.</p>
+		<p>
+                Po&scaron;to je pre&zcaron;iveo skoro pa smrtonosni gove&dstrok;i napad, unaka&zcaron;eni radnik kafi&cacute;a (Vejd Vilson) 
+                trudi se da ostvari svoj san i postane najzgodniji &scaron;anker u Mejberiju, a istovremeno mora da nau&ccaron;i da &zcaron;ivi s gubitkom &ccaron;ula za ukus. </p>
 		</td>
 		<tr>
 		<td colspan="2">
 			<table cellpadding="10px" align="center">
 			<tr>
 			<td><strong>Originalni naslov:</strong></td>
-			<td>Black butterfly</td>
+			<td>Deadpool 2</td>
 			</tr>
 			<tr>
 			<td><strong>Dr&zcaron;ava:</strong></td>
@@ -145,23 +141,23 @@
 			</tr>
 			<tr>
 			<td><strong>Godina:</strong></td>
-			<td>2017</td>
+			<td>2018</td>
 			</tr>
 			<tr>
 			<td><strong>Du&zcaron;ina trajanja filma:</strong></td>
-			<td>93 min</td>
+			<td>124 min</td>
 			</tr>
 			<tr>
 			<td><strong>Re&zcaron;iser:</strong></td>
-			<td>Brian Goodman</td>
+			<td>Ryan Reynolds</td>
 			</tr>
 			<tr>
 			<td><strong>Glumci:</strong></td>
-			<td>Antonio Banderas, Jonathan Rhys Meyers, Piper Perabo</td>
+			<td>Ryan Reynolds, Josh Brolin, David Leitch</td>
 			</tr>
 			<tr>
 			<td><strong>&Zcaron;anr:</strong></td>
-			<td>triler</td>
+			<td>komedija, superheroj</td>
 			</tr>
 			<tr>
 			<td><strong>Distributer:</strong></td>
@@ -177,13 +173,13 @@
 	<div class="row" style="margin-top:20px; margin-bottom:20px; ">
 		<div class="embed-responsive embed-responsive-16by9" style="max-width:720px; max-height:480px;">
 		 <iframe class="embed-responsive-item" style="max-width:720px; max-height:480px; "
-			src="https://www.youtube.com/embed/MFOaolQR6jk"> Browser ne podrzava klip.
+			src="https://www.youtube.com/embed/D86RtevtfrA"> Browser ne podrzava klip.
 		</iframe> 
 		</div>
 	</div>
 	<div class="row">
 			<h4 class="col-lg-12">
-			Mesto projekcije: &nbsp;<strong>Sava Centar</strong>
+			Mesto projekcije: &nbsp;<strong>Dom sindikata</strong>
 		</h4>
 	</div>
 	<div class="row" id="mapa" style="align:cener; width:100%;height:75%">
@@ -249,22 +245,15 @@
 	<div class="row">
 	<div class="wrap-gallery-sidebar flex-w">
 		<!--slike iz filma -->
-		<a class="item-gallery-sidebar wrap-pic-w" href="images/crni_leptir.jpg" data-lightbox="slikeCL">
-			<img class="img-fluid col-lg-3 col-md-5 col-sm-12"  src="images/crni_leptir.jpg" style="margin-top:10px" alt="Gallery"></img>
+		<a class="item-gallery-sidebar wrap-pic-w" href="images/deadpool2_3.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-3 col-md-5 col-sm-12"  src="images/deadpool2_3.jpg" style="margin-top:10px" alt="Gallery"></img>
 		</a>
-		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir1.jpg" data-lightbox="slikeCL">
-			<img class="img-fluid col-lg-4 col-md-6 col-sm-12" src="images/crni_leptir1.jpg" style="margin-top:10px" alt="Gallery"></img>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/deadpool2_1.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-4 col-md-6 col-sm-12" src="images/deadpool2_1.jpg" style="margin-top:10px" alt="Gallery"></img>
 		</a>
-		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir2.jpg" data-lightbox="slikeCL">
-			<img class="img-fluid col-lg-4 col-md-5 col-sm-12" src="images/crni_leptir2.jpg" style="margin-top:10px" alt="Gallery"></img>
+		<a class="item-gallery-sidebar wrap-pic-w " href="images/deadpool2_2.jpg" data-lightbox="slikeCL">
+			<img class="img-fluid col-lg-4 col-md-5 col-sm-12" src="images/deadpool2_2.jpg" style="margin-top:10px" alt="Gallery"></img>
 		</a>
-		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir3.jpg" data-lightbox="slikeCL">
-			<img class="img-fluid col-lg-5 col-md-6 col-sm-12" src="images/crni_leptir3.jpg" style="margin-top:10px" alt="Gallery"></img>
-		</a>
-		<a class="item-gallery-sidebar wrap-pic-w " href="images/crni_leptir4.jpg" data-lightbox="slikeCL">
-			<img class="img-fluid col-lg-5 col-md-6 col-sm-12" src="images/crni_leptir4.jpg" style="margin-top:10px" alt="Gallery"></img>
-		</a>
-
 	</div>
 	</div>
 </div>
